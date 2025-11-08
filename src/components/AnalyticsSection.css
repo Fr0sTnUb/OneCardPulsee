@@ -82,6 +82,24 @@
   margin-bottom: 3rem;
 }
 
+.ga4-badge-live {
+  border-color: rgba(16, 185, 129, 0.7);
+  color: #34d399;
+  box-shadow: 0 0 20px rgba(16, 185, 129, 0.35);
+}
+
+.ga4-badge-fallback {
+  border-color: rgba(248, 113, 113, 0.5);
+  color: #f87171;
+  box-shadow: 0 0 20px rgba(248, 113, 113, 0.25);
+}
+
+.analytics-warning {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #f87171;
+}
+
 .analytics-card {
   text-align: center;
   position: relative;
