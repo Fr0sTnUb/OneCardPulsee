@@ -1,5 +1,3 @@
-import React from 'react'
-
 const FintechWorkspaceImage = () => {
   return (
     <div className="fintech-workspace">
