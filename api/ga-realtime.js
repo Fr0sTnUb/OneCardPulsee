@@ -1,7 +1,7 @@
 const randomBetween = (min, max) =>
   Math.floor(Math.random() * (max - min + 1)) + min
 
-module.exports = (_req, res) => {
+export default function handler(_req, res) {
   const payload = {
     pageViews: randomBetween(9000, 18000),
     outboundClicks: randomBetween(200, 600),
@@ -14,5 +14,6 @@ module.exports = (_req, res) => {
 
   res.setHeader('Cache-Control', 'no-store')
   res.setHeader('Access-Control-Allow-Origin', '*')
+  res.setHeader('Access-Control-Allow-Methods', 'GET')
   res.status(200).json(payload)
 }
