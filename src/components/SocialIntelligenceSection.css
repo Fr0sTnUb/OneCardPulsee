@@ -1,0 +1,129 @@
+.social-intelligence-section {
+  padding: 4rem 2rem;
+  background: transparent;
+  position: relative;
+  z-index: 1;
+}
+
+.social-intelligence-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.social-intelligence-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.social-intelligence-section .section-title {
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+.social-intelligence-section .section-description {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.social-intelligence-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+.social-card {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  transition: all 0.3s ease;
+}
+
+.social-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(59, 130, 246, 0.5);
+  box-shadow: 0 12px 40px rgba(59, 130, 246, 0.3), 0 0 30px rgba(59, 130, 246, 0.2);
+}
+
+.social-card-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  background: var(--gradient-blue);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.social-card-description {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  flex-grow: 1;
+}
+
+.btn-social {
+  width: 100%;
+  padding: 0.75rem 1.5rem;
+  background: transparent;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: var(--text-primary);
+  border: 2px solid rgba(59, 130, 246, 0.4);
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-social::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.btn-social:hover {
+  border-color: var(--neon-blue);
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+  transform: translateY(-2px);
+  background: rgba(59, 130, 246, 0.1);
+}
+
+.btn-social:hover::before {
+  left: 100%;
+}
+
+.btn-social:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  .social-intelligence-section {
+    padding: 2rem 1rem;
+  }
+
+  .social-intelligence-section .section-title {
+    font-size: 2rem;
+  }
+
+  .social-intelligence-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+

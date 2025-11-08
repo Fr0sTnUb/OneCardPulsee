@@ -1,0 +1,158 @@
+.home {
+  flex: 1;
+}
+
+.about-section {
+  padding: 6rem 2rem;
+  background: transparent;
+  position: relative;
+  z-index: 1;
+}
+
+.about-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.about-description {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  max-width: 800px;
+  margin: 0 auto 3rem;
+}
+
+.investors-section {
+  margin-top: 3rem;
+  padding: 2.5rem;
+  background: rgba(16, 20, 33, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 20px;
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.5),
+    0 0 20px rgba(59, 130, 246, 0.1),
+    inset 0 0 30px rgba(59, 130, 246, 0.05);
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.investors-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(59, 130, 246, 0.1),
+    transparent
+  );
+  transition: left 0.6s ease;
+}
+
+.investors-section:hover::before {
+  left: 100%;
+}
+
+.investors-section::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.4), rgba(14, 165, 233, 0.3));
+  border-radius: 20px;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  filter: blur(8px);
+}
+
+.investors-section:hover {
+  border-color: rgba(59, 130, 246, 0.6);
+  box-shadow: 
+    0 12px 40px rgba(0, 0, 0, 0.6),
+    0 0 30px rgba(59, 130, 246, 0.4),
+    0 0 50px rgba(59, 130, 246, 0.2),
+    inset 0 0 40px rgba(59, 130, 246, 0.1);
+  transform: translateY(-3px);
+  background: rgba(16, 20, 33, 0.7);
+}
+
+.investors-section:hover::after {
+  opacity: 1;
+}
+
+.investors-section h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+  font-weight: 700;
+  text-shadow: 0 0 10px rgba(59, 130, 246, 0.3);
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.investors-section:hover h3 {
+  text-shadow: 0 0 20px rgba(59, 130, 246, 0.6);
+  color: var(--neon-blue);
+}
+
+.investors-section p {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  position: relative;
+  z-index: 1;
+  transition: color 0.3s ease;
+}
+
+.investors-section:hover p {
+  color: var(--text-primary);
+}
+
+.apply-section {
+  padding: 6rem 2rem;
+  background: transparent;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.apply-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.apply-description {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin-bottom: 2rem;
+}
+
+.apply-btn {
+  font-size: 1.1rem;
+  padding: 15px 40px;
+}
+
+@media (max-width: 768px) {
+  .about-section,
+  .apply-section {
+    padding: 4rem 1rem;
+  }
+  
+  .about-description,
+  .apply-description {
+    font-size: 1rem;
+  }
+}
+
