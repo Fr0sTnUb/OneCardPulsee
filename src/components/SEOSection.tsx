@@ -30,7 +30,7 @@ const SEOSection = () => {
       <div className="seo-container">
         <div className="seo-header">
           <h2 className="section-title">
-            SEO engineered for <span className="gradient-text">fintech discovery</span>
+            SEO Engineered for <span className="gradient-text">Fintech Discovery</span>
           </h2>
           <p className="section-description">
             Rich meta strategy, purposeful schema, and meticulous alt text ensure your experiences surface exactly when prospects need you.
