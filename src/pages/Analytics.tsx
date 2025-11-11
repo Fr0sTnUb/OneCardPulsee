@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { Helmet } from 'react-helmet-async'
 import { trackEvent } from '../utils/analytics'
 import { EyeIcon, UsersIcon, NewIcon, RefreshIcon, ChartIcon, ClockIcon } from '../components/Icons'
+import AnalyticsScripts from '../components/AnalyticsScripts'
 import './Analytics.css'
 
 interface AnalyticsData {
@@ -76,6 +77,7 @@ const Analytics = () => {
 
   return (
     <>
+      <AnalyticsScripts />
       <Helmet>
         <title>Analytics Dashboard - OneCard | Website Traffic Metrics</title>
         <meta 

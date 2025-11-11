@@ -6,11 +6,13 @@ import AnalyticsSection from '../components/AnalyticsSection'
 import SEOSection from '../components/SEOSection'
 import AIMarketingSection from '../components/AIMarketingSection'
 import SocialIntelligenceSection from '../components/SocialIntelligenceSection'
+import AnalyticsScripts from '../components/AnalyticsScripts'
 import './Home.css'
 
 const Home = () => {
   return (
     <>
+      <AnalyticsScripts />
       <Helmet>
         <title>OneCardPulse - India's Best Metal Credit Card | No Hidden Fees Ever</title>
         <meta 
