@@ -5,7 +5,7 @@ const SEOSection = () => {
   const seoFeatures = [
     {
       title: 'Meta & Schema',
-      description: 'Pre-configured metadata mirrors OneCard\'s polish, boosting click-through and SERP clarity with JSON-LD markup.'
+      description: 'Pre-configured metadata mirrors Spectra\'s polish, boosting click-through and SERP clarity with JSON-LD markup.'
     },
     {
       title: 'Keyword Architecture',

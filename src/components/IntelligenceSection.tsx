@@ -36,7 +36,7 @@ const IntelligenceSection = () => {
               <span className="gradient-text">Breakout Brands</span>
             </h2>
             <p className="intelligence-description">
-              Inspired by OneCard's seamless experience, Pulse fuses real-time analytics, AI insights, and SEO craftsmanship to accelerate acquisition and retention.
+              Inspired by Spectra's seamless experience, Pulse fuses real-time analytics, AI insights, and SEO craftsmanship to accelerate acquisition and retention.
             </p>
             
             <div className="feature-tags">
@@ -73,7 +73,7 @@ const IntelligenceSection = () => {
               </div>
               <div className="metric-item">
                 <span className="metric-value">Zero-lag</span>
-                <span className="metric-text">insights modeled on OneCard's customer-first DNA</span>
+                <span className="metric-text">insights modeled on Spectra's customer-first DNA</span>
               </div>
             </div>
 

@@ -1,12 +1,19 @@
 import { useEffect, useState } from 'react'
+import { Link, useLocation } from 'react-router-dom'
 import { trackEvent } from '../utils/analytics'
 import './Navbar.css'
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false)
   const [activeSection, setActiveSection] = useState('')
+  const location = useLocation()
 
   useEffect(() => {
+    // Only handle scroll-based active section on home page
+    if (location.pathname !== '/') {
+      return
+    }
+
     // Update active section based on scroll position
     const handleScroll = () => {
       const scrollPosition = window.scrollY + 150
@@ -35,7 +42,7 @@ const Navbar = () => {
     handleScroll() // Check on mount
     
     return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+  }, [location.pathname])
 
   useEffect(() => {
     const handleNavbarScroll = () => {
@@ -52,72 +59,76 @@ const Navbar = () => {
   return (
     <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
       <div className="navbar-container">
-        <a href="#home" className="navbar-logo" onClick={() => handleNavClick('Logo')}>
-          <span className="logo-text">OneCardPulse</span>
-        </a>
+        <Link to="/" className="navbar-logo" onClick={() => handleNavClick('Logo')}>
+          <span className="logo-text">Spectra</span>
+        </Link>
         <ul className="navbar-menu">
           <li>
-            <a 
-              href="#home" 
-              className={activeSection === 'home' || activeSection === '' ? 'active' : ''}
+            <Link 
+              to="/"
+              className={location.pathname === '/' && (activeSection === 'home' || activeSection === '') ? 'active' : ''}
               onClick={() => handleNavClick('Home')}
             >
               Home
-            </a>
+            </Link>
           </li>
+          {location.pathname === '/' && (
+            <>
+              <li>
+                <a 
+                  href="#features" 
+                  className={activeSection === 'features' ? 'active' : ''}
+                  onClick={() => handleNavClick('Features')}
+                >
+                  Features
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="#analytics" 
+                  className={activeSection === 'analytics' ? 'active' : ''}
+                  onClick={() => handleNavClick('Analytics')}
+                >
+                  Analytics
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="#seo" 
+                  className={activeSection === 'seo' ? 'active' : ''}
+                  onClick={() => handleNavClick('SEO')}
+                >
+                  SEO
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="#ai-marketing" 
+                  className={activeSection === 'ai-marketing' ? 'active' : ''}
+                  onClick={() => handleNavClick('AI Marketing')}
+                >
+                  AI Lab
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="#social-intelligence" 
+                  className={activeSection === 'social-intelligence' ? 'active' : ''}
+                  onClick={() => handleNavClick('Social Intelligence')}
+                >
+                  Engage
+                </a>
+              </li>
+            </>
+          )}
           <li>
-            <a 
-              href="#features" 
-              className={activeSection === 'features' ? 'active' : ''}
-              onClick={() => handleNavClick('Features')}
-            >
-              Features
-            </a>
-          </li>
-          <li>
-            <a 
-              href="#analytics" 
-              className={activeSection === 'analytics' ? 'active' : ''}
-              onClick={() => handleNavClick('Analytics')}
-            >
-              Analytics
-            </a>
-          </li>
-          <li>
-            <a 
-              href="#seo" 
-              className={activeSection === 'seo' ? 'active' : ''}
-              onClick={() => handleNavClick('SEO')}
-            >
-              SEO
-            </a>
-          </li>
-          <li>
-            <a 
-              href="#ai-marketing" 
-              className={activeSection === 'ai-marketing' ? 'active' : ''}
-              onClick={() => handleNavClick('AI Marketing')}
-            >
-              AI Lab
-            </a>
-          </li>
-          <li>
-            <a 
-              href="#social-intelligence" 
-              className={activeSection === 'social-intelligence' ? 'active' : ''}
-              onClick={() => handleNavClick('Social Intelligence')}
-            >
-              Engage
-            </a>
-          </li>
-          <li>
-            <a 
-              href="#apply" 
-              className="btn btn-primary navbar-cta"
+            <Link 
+              to="/apply" 
+              className={`btn btn-primary navbar-cta ${location.pathname === '/apply' ? 'active' : ''}`}
               onClick={() => handleNavClick('Apply Now')}
             >
               Apply Now
-            </a>
+            </Link>
           </li>
         </ul>
       </div>

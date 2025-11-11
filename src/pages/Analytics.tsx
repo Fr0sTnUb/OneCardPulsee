@@ -77,14 +77,14 @@ const Analytics = () => {
   return (
     <>
       <Helmet>
-        <title>Analytics Dashboard - OneCard | Website Traffic Metrics</title>
+        <title>Analytics Dashboard - Spectra | Website Traffic Metrics</title>
         <meta 
           name="description" 
-          content="View detailed website analytics including page views, bounce rate, session duration, and user engagement metrics for OneCard." 
+          content="View detailed website analytics including page views, bounce rate, session duration, and user engagement metrics for Spectra." 
         />
         <meta 
           name="keywords" 
-          content="website analytics, traffic metrics, page views, bounce rate, session duration, google analytics, seo metrics, onecard analytics" 
+          content="website analytics, traffic metrics, page views, bounce rate, session duration, google analytics, seo metrics, spectra analytics" 
         />
       </Helmet>
       <div className="analytics-page">

@@ -1,15 +1,15 @@
-# OneCard - India's Best Metal Credit Card Website
+# Spectra - India's Best Metal Credit Card Website
 
-A minimalistic, attractive, and catchy website inspired by OneCard, built with React and TypeScript. This project integrates Google Analytics, SEO optimization, and social media integration for digital marketing proficiency.
+A minimalistic, attractive, and catchy website for Spectra, built with React and TypeScript. This project integrates Google Analytics, SEO optimization, and social media integration for digital marketing proficiency.
 
 ## Features
 
-- 🎨 **Minimalistic Design**: Clean, modern UI inspired by OneCard branding
+- 🎨 **Minimalistic Design**: Clean, modern UI with Spectra branding
 - 💳 **Metal Credit Card Showcase**: Interactive 3D card visualization
-- 📊 **Google Analytics Integration**: Real-time traffic metrics tracking (Measurement ID: G-M1QKWVFG9Y)
+- 📊 **Google Analytics Integration**: Real-time traffic metrics tracking (Measurement ID: G-NVPEPQ7D68)
 - 🔍 **SEO Optimized**: Meta tags, keywords, alt text, and semantic HTML
 - 📱 **Social Media Integration**: Links to Facebook, Twitter, Instagram, LinkedIn, and YouTube
-- ✨ **Neon Hover Effects**: Eye-catching neon glow effects on hover (inspired by OneCard Pulse)
+- ✨ **Neon Hover Effects**: Eye-catching neon glow effects on hover
 - 🌐 **Responsive Design**: Mobile-first approach, works on all devices
 - ⚡ **Fast Performance**: Built with Vite for optimal performance
 
@@ -46,7 +46,7 @@ npm run preview
 
 ## Google Analytics
 
-The website is integrated with Google Analytics using Measurement ID: **G-M1QKWVFG9Y**
+The website is integrated with Google Analytics using Measurement ID: **G-NVPEPQ7D68**
 
 - Page views are tracked automatically
 - User interactions (clicks, navigation) are tracked

@@ -13,7 +13,7 @@ const Features = () => {
     {
       icon: MobileIcon,
       title: 'Powerful Mobile App',
-      description: 'Control all aspects of your One Credit Card from the powerful OneCard app - transaction limit, domestic/international use, online/offline use, contactless payments and much more.',
+      description: 'Control all aspects of your Spectra Credit Card from the powerful Spectra app - transaction limit, domestic/international use, online/offline use, contactless payments and much more.',
       alt: 'Powerful mobile app feature'
     },
     {
@@ -57,7 +57,7 @@ const Features = () => {
       <div className="features-container">
         <div className="features-header">
           <h2 className="section-title">
-            Why Choose <span className="gradient-text">OneCardPulse</span>?
+            Why Choose <span className="gradient-text">Spectra</span>?
           </h2>
           <p className="section-description">
             Experience a credit card designed for the digital age with cutting-edge features 

@@ -9,7 +9,7 @@ const AnalyticsSection = () => {
             Google <span className="gradient-text">Analytics</span>
           </h2>
           <p className="analytics-subtitle">
-            We rely on GA4 to understand how visitors discover, explore, and revisit OneCardPulse.
+            We rely on GA4 to understand how visitors discover, explore, and revisit Spectra.
             All conversions, engagement funnels, and attribution modeling happen directly inside the
             Google Analytics dashboard, keeping sensitive data within your existing analytics stack.
           </p>

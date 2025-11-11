@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { trackEvent } from '../utils/analytics'
 import './Hero.css'
 
@@ -14,16 +15,16 @@ const Hero = () => {
             <span>Say Hi to</span>
           </div>
           <h1 className="hero-title">
-            OneCard<span className="gradient-text">Pulse</span>
+            <span className="gradient-text">Spectra</span>
           </h1>
           <p className="hero-description">
             India's best metal credit card. Built with full-stack tech. Backed by the principles of 
             simplicity, transparency, and giving back control to the user.
           </p>
           <div className="hero-cta">
-            <a href="#apply" className="btn btn-primary" onClick={() => handleCTAClick('Apply Now')}>
+            <Link to="/apply" className="btn btn-primary" onClick={() => handleCTAClick('Apply Now')}>
               Apply Now
-            </a>
+            </Link>
             <a href="#features" className="btn btn-secondary" onClick={() => handleCTAClick('Learn More')}>
               Learn More
             </a>

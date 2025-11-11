@@ -1,7 +1,7 @@
 {
-  "name": "onecardpulse-website",
+  "name": "spectra-website",
   "version": "1.0.0",
-  "description": "OneCardPulse website with analytics, SEO, and digital marketing integration",
+  "description": "Spectra website with analytics, SEO, and digital marketing integration",
   "private": true,
   "type": "module",
   "scripts": {

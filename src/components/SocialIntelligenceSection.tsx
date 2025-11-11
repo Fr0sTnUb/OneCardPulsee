@@ -17,7 +17,7 @@ const SocialIntelligenceSection = () => {
     },
     {
       title: 'Influencer Ready',
-      description: 'Curated dashboards keep affiliates in sync with launch goals, mirroring OneCard\'s co-branded playbook.',
+      description: 'Curated dashboards keep affiliates in sync with launch goals, mirroring Spectra\'s co-branded playbook.',
       buttonText: 'Share on Facebook',
       buttonAction: 'facebook'
     }
@@ -37,7 +37,7 @@ const SocialIntelligenceSection = () => {
             Amplify with <span className="gradient-text">Social Intelligence</span>
           </h2>
           <p className="section-description">
-            Blend OneCard's community-driven ethos with ready-to-launch brand storytelling across LinkedIn, Instagram, and X.
+            Blend Spectra's community-driven ethos with ready-to-launch brand storytelling across LinkedIn, Instagram, and X.
           </p>
         </div>
         <div className="social-intelligence-grid">

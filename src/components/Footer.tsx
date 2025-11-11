@@ -20,7 +20,7 @@ const Footer = () => {
       <div className="footer-container">
         <div className="footer-content">
           <div className="footer-section footer-brand">
-            <h3 className="footer-logo">OneCardPulse</h3>
+            <h3 className="footer-logo">Spectra</h3>
             <p className="footer-location">Crafted with love in India</p>
             <p className="footer-tagline">
               We are all ears! We are a new kid on the block, eager to learn. All ideas and suggestions are welcome.
@@ -83,7 +83,7 @@ const Footer = () => {
             <span>Real-time Analytics</span>
             <span>AI-Powered Insights</span>
           </div>
-          <p>&copy; 2025 OneCardPulse. All Rights Reserved.</p>
+          <p>&copy; 2025 Spectra. All Rights Reserved.</p>
         </div>
       </div>
     </footer>
