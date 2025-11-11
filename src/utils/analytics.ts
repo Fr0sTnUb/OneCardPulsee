@@ -9,7 +9,6 @@ declare global {
 }
 
 let hasWarnedMissingId = false
-let gaInitialized = false
 
 const ensureMeasurementConfigured = (): boolean => {
   if (GA_MEASUREMENT_ID) return true
@@ -21,27 +20,30 @@ const ensureMeasurementConfigured = (): boolean => {
   return false
 }
 
-const isGtagAvailable = (): boolean =>
-  typeof window !== 'undefined' && typeof window.gtag === 'function'
+const ensureGtag = (): boolean => {
+  if (typeof window === 'undefined') return false
+
+  window.dataLayer = window.dataLayer || []
+  window.gtag =
+    window.gtag ||
+    function gtag(...args: unknown[]) {
+      window.dataLayer!.push(args)
+    }
+
+  return true
+}
 
 export const initGA = () => {
   if (!ensureMeasurementConfigured()) return
-  if (!isGtagAvailable()) {
-    if (import.meta.env.DEV) {
-      console.warn('Google Analytics script has not loaded yet.')
-    }
-    return
-  }
-
-  gaInitialized = true
+  ensureGtag()
 }
 
 export const trackPageView = (path: string) => {
   initGA()
-  if (!gaInitialized || !isGtagAvailable()) return
+  if (typeof window === 'undefined' || typeof window.gtag !== 'function') return
 
   try {
-    window.gtag!('event', 'page_view', {
+    window.gtag('event', 'page_view', {
       page_path: path,
       page_location: `${window.location.origin}${path}`,
       page_title: document.title
@@ -53,10 +55,10 @@ export const trackPageView = (path: string) => {
 
 export const trackEvent = (category: string, action: string, label?: string, value?: number) => {
   initGA()
-  if (!gaInitialized || !isGtagAvailable()) return
+  if (typeof window === 'undefined' || typeof window.gtag !== 'function') return
 
   try {
-    window.gtag!('event', action, {
+    window.gtag('event', action, {
       event_category: category,
       event_label: label,
       value
