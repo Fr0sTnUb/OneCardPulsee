@@ -1,4 +1,4 @@
-const DEFAULT_GA_ID = 'G-HBGVT511BH'
+const DEFAULT_GA_ID = 'G-NVPEPQ7D68'
 const GA_MEASUREMENT_ID = import.meta.env.VITE_GA_MEASUREMENT_ID || DEFAULT_GA_ID
 
 declare global {
