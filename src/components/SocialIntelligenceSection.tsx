@@ -23,10 +23,31 @@ const SocialIntelligenceSection = () => {
     }
   ]
 
+  const websiteUrl = 'https://www.getonecard.app/'
+
+  const getShareUrl = (platform: string, featureTitle: string) => {
+    const encodedUrl = encodeURIComponent(websiteUrl)
+    const encodedTitle = encodeURIComponent(`Spectra | ${featureTitle}`)
+    const encodedText = encodeURIComponent('Discover Spectra\'s Social Intelligence suite.')
+
+    switch (platform) {
+      case 'twitter':
+        return `https://twitter.com/intent/tweet?text=${encodedText}&url=${encodedUrl}`
+      case 'linkedin':
+        return `https://www.linkedin.com/shareArticle?mini=true&url=${encodedUrl}&title=${encodedTitle}&summary=${encodedText}`
+      case 'facebook':
+        return `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`
+      default:
+        return websiteUrl
+    }
+  }
+
   const handleShareClick = (platform: string, featureTitle: string) => {
     trackEvent('Social Intelligence', 'Share', `${featureTitle} - ${platform}`)
-    // In a real implementation, this would open the share dialog or navigate to the platform
-    console.log(`Sharing ${featureTitle} on ${platform}`)
+    const shareUrl = getShareUrl(platform, featureTitle)
+    if (typeof window !== 'undefined') {
+      window.open(shareUrl, '_blank', 'noopener,noreferrer')
+    }
   }
 
   return (
