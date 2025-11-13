@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { trackEvent } from '../utils/analytics'
 import { FacebookIcon, TwitterIcon, InstagramIcon, LinkedInIcon, YouTubeIcon } from './Icons'
 import './Footer.css'
@@ -21,9 +22,9 @@ const Footer = () => {
         <div className="footer-content">
           <div className="footer-section footer-brand">
             <h3 className="footer-logo">Spectra</h3>
-            <p className="footer-location">Crafted with love in India</p>
+            <p className="footer-location">Made By Fr0sT</p>
             <p className="footer-tagline">
-              We are all ears! We are a new kid on the block, eager to learn. All ideas and suggestions are welcome.
+              We are all ears! To healthcare needs!!
             </p>
             <div className="footer-social">
               <h4>Connect With Us</h4>
@@ -60,20 +61,20 @@ const Footer = () => {
           <div className="footer-section">
             <h4>Resources</h4>
             <ul>
-              <li><a href="#privacy">Privacy Policy</a></li>
-              <li><a href="#terms">Terms Of Service</a></li>
-              <li><a href="#cookie">Cookie Policy</a></li>
-              <li><a href="#security">Security</a></li>
-              <li><a href="#docs">Documentation</a></li>
+              <li><Link to="/privacy-policy" onClick={() => trackEvent('Footer', 'Click', 'Privacy Policy')}>Privacy Policy</Link></li>
+              <li><Link to="/terms-and-conditions" onClick={() => trackEvent('Footer', 'Click', 'Terms and Conditions')}>Terms Of Service</Link></li>
+              <li><Link to="/cookie-policy" onClick={() => trackEvent('Footer', 'Click', 'Cookie Policy')}>Cookie Policy</Link></li>
+              <li><Link to="/security" onClick={() => trackEvent('Footer', 'Click', 'Security')}>Security</Link></li>
+              <li><Link to="/documentation" onClick={() => trackEvent('Footer', 'Click', 'Documentation')}>Documentation</Link></li>
             </ul>
           </div>
           <div className="footer-section">
             <h4>Company</h4>
             <ul>
-              <li><a href="#careers">Join Our Team</a></li>
-              <li><a href="#contact">Contact Us</a></li>
-              <li><a href="#blog">Blog</a></li>
-              <li><a href="#support">Support</a></li>
+              <li><Link to="/join-our-team" onClick={() => trackEvent('Footer', 'Click', 'Join Our Team')}>Join Our Team</Link></li>
+              <li><Link to="/contact-us" onClick={() => trackEvent('Footer', 'Click', 'Contact Us')}>Contact Us</Link></li>
+              <li><Link to="/blog" onClick={() => trackEvent('Footer', 'Click', 'Blog')}>Blog</Link></li>
+              <li><Link to="/support" onClick={() => trackEvent('Footer', 'Click', 'Support')}>Support</Link></li>
             </ul>
           </div>
         </div>

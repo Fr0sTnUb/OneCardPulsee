@@ -6,6 +6,7 @@ import './Navbar.css'
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false)
   const [activeSection, setActiveSection] = useState('')
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const location = useLocation()
 
   useEffect(() => {
@@ -52,8 +53,31 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleNavbarScroll)
   }, [])
 
+  useEffect(() => {
+    // Close mobile menu when clicking outside
+    const handleClickOutside = (e: MouseEvent) => {
+      const target = e.target as HTMLElement
+      if (isMobileMenuOpen && !target.closest('.navbar-menu') && !target.closest('.mobile-menu-toggle')) {
+        setIsMobileMenuOpen(false)
+      }
+    }
+
+    if (isMobileMenuOpen) {
+      document.addEventListener('click', handleClickOutside)
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = ''
+    }
+
+    return () => {
+      document.removeEventListener('click', handleClickOutside)
+      document.body.style.overflow = ''
+    }
+  }, [isMobileMenuOpen])
+
   const handleNavClick = (section: string) => {
     trackEvent('Navigation', 'Click', section)
+    setIsMobileMenuOpen(false)
   }
 
   return (
@@ -62,7 +86,18 @@ const Navbar = () => {
         <Link to="/" className="navbar-logo" onClick={() => handleNavClick('Logo')}>
           <span className="logo-text">Spectra</span>
         </Link>
-        <ul className="navbar-menu">
+        <button 
+          className="mobile-menu-toggle"
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          aria-label="Toggle menu"
+        >
+          <span className={`hamburger ${isMobileMenuOpen ? 'active' : ''}`}>
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+        </button>
+        <ul className={`navbar-menu ${isMobileMenuOpen ? 'mobile-open' : ''}`}>
           <li>
             <Link 
               to="/"
