@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { trackEvent } from '../utils/analytics'
+import { generateMarketingKeywords } from '../utils/geminiApi'
 import './AIMarketingSection.css'
 
 const AIMarketingSection = () => {
@@ -7,27 +8,26 @@ const AIMarketingSection = () => {
   const [priorityThemes, setPriorityThemes] = useState('cards, rewards, fintech loyalty')
   const [suggestedClusters, setSuggestedClusters] = useState<string[]>([])
   const [loading, setLoading] = useState(false)
+  const [error, setError] = useState<string | null>(null)
 
-  const handleGenerateKeywords = () => {
+  const handleGenerateKeywords = async () => {
     trackEvent('AI Marketing', 'Generate Keywords', 'Button Click')
     setLoading(true)
+    setError(null)
+    setSuggestedClusters([])
 
-    // Simulate AI keyword generation
-    setTimeout(() => {
-      const mockClusters = [
-        'Credit card rewards',
-        'Metal credit card benefits',
-        'Fintech loyalty programs',
-        'No fees credit card',
-        'Digital banking rewards',
-        'Credit card cashback',
-        'Rewards redemption',
-        'Card benefits India'
-      ]
-      setSuggestedClusters(mockClusters)
+    try {
+      const keywords = await generateMarketingKeywords(campaignContent, priorityThemes)
+      setSuggestedClusters(keywords)
+      trackEvent('AI Marketing', 'Keywords Generated', `Count: ${keywords.length}`)
+    } catch (err) {
+      const errorMessage = err instanceof Error ? err.message : 'Failed to generate keywords. Please try again.'
+      setError(errorMessage)
+      trackEvent('AI Marketing', 'Error', errorMessage)
+      console.error('Error generating keywords:', err)
+    } finally {
       setLoading(false)
-      trackEvent('AI Marketing', 'Keywords Generated', `Count: ${mockClusters.length}`)
-    }, 1500)
+    }
   }
 
   return (
@@ -76,12 +76,24 @@ const AIMarketingSection = () => {
               <h3 className="output-card-title">Suggested clusters</h3>
               <p className="output-subtitle">Focus-aligned picks</p>
               <p className="output-description">
-                Powered by NLP: tokenization, stemming, and relevance scoring to accelerate SEO experimentation.
+                Powered by Google Gemini AI: Advanced NLP and relevance scoring to accelerate SEO experimentation.
               </p>
               {loading ? (
                 <div className="loading-keywords">
                   <div className="spinner-small"></div>
-                  <p>Analyzing content and generating keywords...</p>
+                  <p>Analyzing content and generating keywords with AI...</p>
+                </div>
+              ) : error ? (
+                <div className="error-state">
+                  <p style={{ color: '#ef4444', marginBottom: '0.5rem' }}>⚠️ Error</p>
+                  <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>{error}</p>
+                  <button
+                    className="btn btn-primary"
+                    onClick={handleGenerateKeywords}
+                    style={{ marginTop: '1rem', padding: '0.5rem 1rem', fontSize: '0.9rem' }}
+                  >
+                    Try Again
+                  </button>
                 </div>
               ) : suggestedClusters.length > 0 ? (
                 <div className="clusters-list">

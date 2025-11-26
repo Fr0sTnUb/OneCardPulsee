@@ -193,6 +193,15 @@
   font-style: italic;
 }
 
+.error-state {
+  padding: 2rem 0;
+  text-align: center;
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
 @keyframes spin {
   to { transform: rotate(360deg); }
 }
